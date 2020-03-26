@@ -11,6 +11,7 @@ Approximate time: 20 minutes
 2. Log in with your Tufts Credentials
 3. Choose Clusters->HPC Shell Access
 <img src="img/od_menu.png" width="200">
+
 4. Type password, which is hidden for security purposes
 5. You'll see a welcome message ending in a bash prompt:
 `tutln01@login.cluster.tufts.edu's password:`
