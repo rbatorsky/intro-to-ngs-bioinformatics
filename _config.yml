@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: Introduction to Next Generation Sequencing Bioinformatics
-description: A Tufts University Research Technology Workshop
+title: [Introduction to Next Generation Sequencing Bioinformatics]
+description: [A Tufts University Research Technology Workshop]
 
 plugins:
   - jekyll-relative-links
