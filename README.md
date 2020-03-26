@@ -9,7 +9,7 @@ The material is designed for a 2-3 hour workshop and is run on Tufts High Perfor
 - Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
 - Variant Calling, Annotation and Interpretation
 
-<img src="img/workflow.png" width="200">
+<img src="img/workflow.png" width="100">
 
 ## Prerequisites
 
