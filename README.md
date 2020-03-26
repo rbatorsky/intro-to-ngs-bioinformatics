@@ -1,12 +1,20 @@
-## Welcome to GitHub Pages
+## Introduction to NGS Bioinformatics
 
-You can use the [editor on GitHub](https://github.com/rbatorsky/galaxy-tutorials/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Prerequisites | Duration |
+:-------------|:----------|
+Introduction to [Linux](https://tufts.box.com/s/x9aflewr2qw59pcbgcghbo9muykbi4ju) and [HPC](https://tufts.box.com/s/yubnzxnpih14hd80mbfxqrkdri8s2nws) | 2-3 hours|
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Description
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This course covers the basics of Next Generation Sequencing Bioinformatics, with the final goal of variant calling and interpretation.
+
+
+## Goals
+
+
+
+
 
 ```markdown
 Syntax highlighted code block
