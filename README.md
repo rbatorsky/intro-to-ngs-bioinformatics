@@ -1,4 +1,6 @@
+# Introduction to NGS Bioinformatics
 ## Introduction to NGS Bioinformatics
+### Introduction to NGS Bioinformatics
 
 Prerequisites | Duration |
 :-------------|:----------|
@@ -11,6 +13,25 @@ This course covers the basics of Next Generation Sequencing Bioinformatics, with
 
 
 ## Goals
+
+You’ll need:	
+Cluster Account – please let me know if you don’t have one
+Basic knowledge of Linux
+
+Our goals:
+Writing and running bash scripts
+Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
+Variant Calling and Interpretation
+
+Course format:
+Short explanations followed by hands on exercises
+Working with a partner is encouraged		
+Please ask questions!
+
+
+
+## Schedule
+
 
 
 
