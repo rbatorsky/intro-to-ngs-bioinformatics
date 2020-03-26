@@ -1,38 +1,30 @@
 # Introduction to NGS Bioinformatics
-## Introduction to NGS Bioinformatics
-### Introduction to NGS Bioinformatics
 
-Prerequisites | Duration |
-:-------------|:----------|
-Introduction to [Linux](https://tufts.box.com/s/x9aflewr2qw59pcbgcghbo9muykbi4ju) and [HPC](https://tufts.box.com/s/yubnzxnpih14hd80mbfxqrkdri8s2nws) | 2-3 hours|
-
-
-### Description
-
+## Description
 This course covers the basics of Next Generation Sequencing Bioinformatics, with the final goal of variant calling and interpretation.
-
+The material is designed for a 2-3 hour workshop and is run on Tufts High Performance Compute Cluster
 
 ## Goals
+- Writing and running bash scripts
+- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
+- Variant Calling, Annotation and Interpretation
 
-You’ll need:	
-Cluster Account – please let me know if you don’t have one
-Basic knowledge of Linux
+## Prerequisites
 
-Our goals:
-Writing and running bash scripts
-Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
-Variant Calling and Interpretation
+### Computational skills needed
+- Introduction to [Linux](https://tufts.box.com/s/x9aflewr2qw59pcbgcghbo9muykbi4ju)
+- Introduction to [HPC](https://tufts.box.com/s/yubnzxnpih14hd80mbfxqrkdri8s2nws)
 
-Course format:
-Short explanations followed by hands on exercises
-Working with a partner is encouraged		
-Please ask questions!
-
-
+### Materials Needed
+- Chrome web browser
+- Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
+- [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
 
 ## Schedule
-
-
+- Introduction
+- Part 1
+- Part 2
+- Part 3 
 
 
 
