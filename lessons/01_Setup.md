@@ -10,7 +10,7 @@ Approximate time: 20 minutes
 1. Open a Chrome browser visit ondemand.cluster.tufts.edu
 2. Log in with your Tufts Credentials
 3. Choose Clusters->HPC Shell Access
-<img src="img/od_menu.png" width="200">
+<img src="../img/od_menu.png" width="200">
 
 4. Type password, which is hidden for security purposes
 5. You'll see a welcome message ending in a bash prompt:
