@@ -21,7 +21,8 @@ we seek to align to a genome containing many blue and red segments.
 The table keeps track of all the locations where a given pattern (seed sequence) occurs in the reference genome.
 When BWA encounters a new read, it looks up a seed sequence at the beginning of the read. 
 This speeds up the search for potential alignment positions for a given read.
-<img src="../img/bwa.png" width="300">
+
+<img src="../img/index.png" width="300">
 
 It has three algorithms:
 
