@@ -28,10 +28,6 @@ GACTCACGTAACTTTAAACTCTAACAGAAATATACTA…   <-- Sequence
 CAEFGDG?BCGGGEEDGGHGHGDFHEIEGGDDDD…      <-- Quality String
 ```
 
-| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg | width=100 ) 
-|:--:| 
-| *Space* |
-
 ### Base Quality Scores
 
 The symbols we see in the read quality string are an encoding of the quality score.
@@ -39,8 +35,8 @@ The symbols we see in the read quality string are an encoding of the quality sco
 This figure shows a mapping of encoded quality score to quality score.
 
 <figure>
-<img src="../img/base_qual.png" width="400">
 <figcaption> Test </figcaption>
+<img src="../img/base_qual.png" width="400">
 </figure>
 
 A quality score is a prediction of the probability of an error in base calling.
