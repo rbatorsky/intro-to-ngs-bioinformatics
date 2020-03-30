@@ -286,4 +286,4 @@ Result:
 Samtools flagstat is a great way to check to make sure that the aligment meets the quality expected.
 In this case, >99% properly paired and mapped indicates a high quality alignment.
 
-<img src="../img/alignment_summary.png" width="300">
+<img src="../img/alignment_summary.png" width="400">
