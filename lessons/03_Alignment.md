@@ -235,8 +235,11 @@ Alignment:
 SRR098401.109756285 83  chr10 94760653 60 76M = 94760647 -82 CTAA…    D?@A... 
 SRR098401.109756285 163 chr10 94760647 60 76M = 94760653  82 ATTA…    ?>@@... 
 ```
+```markdown
+1                   2   3     4        5  6   7 8         9  10        11
+```
 
-The fields that are important to understand are, in order:
+The fields:
 1. Read ID
 2. Flag: indicates alignment information e.g. paired, aligned, etc.
 Useful site to decode flags: https://broadinstitute.github.io/picard/explain-flags.html
@@ -249,7 +252,6 @@ Useful site to decode flags: https://broadinstitute.github.io/picard/explain-fla
 9. TLEN: Template length, size of the original DNA or RNA fragment
 10. Read Sequence
 11. Read Quality
-12. Optional Fields 
 
 More information on SAM format: [https://samtools.github.io/hts-specs/SAMv1.pdf](https://samtools.github.io/hts-specs/SAMv1.pdf)
 
@@ -282,6 +284,6 @@ Result:
 ```
 
 Samtools flagstat is a great way to check to make sure that the aligment meets the quality expected.
-In this case, >99% properly paired and mapped is an exceptional result.
+In this case, >99% properly paired and mapped indicates a high quality alignment.
 
 <img src="../img/alignment_summary.png" width="300">
