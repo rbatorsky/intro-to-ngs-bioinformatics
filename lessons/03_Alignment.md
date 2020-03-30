@@ -288,4 +288,4 @@ In this case, >99% properly paired and mapped indicates a high quality alignment
 
 ## Summary
 
-<img src="../img/alignment_summary.png" width="400">
+<img src="../img/alignment_summary.png" width="500">
