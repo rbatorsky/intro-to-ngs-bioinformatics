@@ -45,7 +45,7 @@ We'll create this index
 
 You'll see the first 10 lines of the file `chr10.fa`:
 ```buildoutcfg
->chr10 AC:CM000672.2 gi:568336…   <-- >name
+>chr10 AC:CM000672.2 gi:568336…   <-- '>' charachter followed by sequence name
 NNNNNNNNNNNNNNNNNNNNN             <-- sequence
 …
 ```
@@ -231,36 +231,7 @@ Header:
 ```
 
 Alignment:
-<img src="../img/workflow_align.png" width="400">
+<img src="../img/sam_body.png" width="400">
 
 More information on SAM format: [https://samtools.github.io/hts-specs/SAMv1.pdf](https://samtools.github.io/hts-specs/SAMv1.pdf)
 
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rbatorsky/galaxy-tutorials/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
