@@ -47,10 +47,10 @@ sh picard.sh
 
 
 Result 
-```diff
-+[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam …
-+…
-+[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam done. 
+```markdown
+[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam …
+…
+[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam done. 
 ```
 
 Take a look at the results directory:
@@ -59,12 +59,27 @@ ls results
 ```
 
 Result:
+```markdown
 na12878.sam  
 na12878.srt.bam 
+```
+
+## Mark Duplicates in BAM file
+In the sequencing process, many copies are made of a DNA fragment
+The amount of duplication may not be the same for all sequences and can cause biases in variant calling
+Therefore, we mark the duplicates so the variant caller can ignore them.
 
 
-<div class="text-purple">This text is purple, <a href="#" class="text-inherit">including the link</a></div>
+Duplicate reads are identified based on their alignment coordinates and CIGAR string.
+For example, the below alignment appears to have a G to A mutation in the majority of reads:
+<img src="../img/dup_pre.png" width="200">
 
-<div class="text-blue mb-2">
-  .text-blue on white
-</div>
+However, when the duplicates are removed, the number of reads supporting the mutation drops to one.
+<img src="../img/dup_post.png" width="200">
+
+
+
+
+the hbc:
+https://github.com/hbc/NGS_Data_Analysis_Course/blob/master/sessionVI/lessons/01_alignment.md
+
