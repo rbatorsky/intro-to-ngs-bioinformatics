@@ -8,19 +8,21 @@ Approximate time: 20 minutes
 
 # BWA Alignment
 
-Burrows-Wheeler Aligner ([BWA](http://bio-bwa.sourceforge.net/)) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. 
+Burrows-Wheeler Aligner ([BWA](http://bio-bwa.sourceforge.net/)) is a software package for mapping low-divergent 
+sequences against a large reference genome, such as the human genome. 
 
 The Naive approach to read alignment is to compare a read to every position in the reference genome.
 This is too slow!
 
 BWA solves this problem by creating an "index" of our reference sequence for faster lookup.
 
-The following figure shows a short read with a red segment followed by a blue segment that we seek to align to a genome containing many blue and red segments.
+The following figure shows a short read with a red segment followed by a blue segment that 
+we seek to align to a genome containing many blue and red segments.
 The table keeps track of all the locations where a given pattern (seed sequence) occurs in the reference genome.
 When BWA encounters a new read, it looks up a seed sequence at the beginning of the read. 
 This speeds up the search for potential alignment positions for a given read.
 
-<img src="../img/bwa.png" width="400">
+<img src="../img/bwa.png" width="300">
 
 It has three algorithms:
 
