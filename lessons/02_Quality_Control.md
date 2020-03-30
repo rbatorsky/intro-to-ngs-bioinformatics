@@ -28,6 +28,10 @@ GACTCACGTAACTTTAAACTCTAACAGAAATATACTA…   <-- Sequence
 CAEFGDG?BCGGGEEDGGHGHGDFHEIEGGDDDD…      <-- Quality String
 ```
 
+| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg) | 
+|:--:| 
+| *Space* |
+
 ### Base Quality Scores
 
 The symbols we see in the read quality string are an encoding of the quality score.
