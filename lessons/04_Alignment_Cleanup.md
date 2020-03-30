@@ -47,7 +47,7 @@ sh picard.sh
 
 
 Result 
-```markdown
+```diff
 +[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam …
 +…
 +[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam done. 
