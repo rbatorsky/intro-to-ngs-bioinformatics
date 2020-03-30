@@ -1,32 +1,111 @@
 Approximate time: 20 minutes
 
-## Learning Objectives
-
-- 
-- View
-
 ## Goals
-- Writing and running bash scripts
-- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
-- Variant Calling, Annotation and Interpretation
+- Align short reads to a references genome with BWA
+- View alignment using IGV
 
-## Prerequisites
+<img src="../img/workflow_align.png" width="400">
 
-### Computational skills needed
-- Introduction to [Linux](https://tufts.box.com/s/x9aflewr2qw59pcbgcghbo9muykbi4ju)
-- Introduction to [HPC](https://tufts.box.com/s/yubnzxnpih14hd80mbfxqrkdri8s2nws)
+# BWA Alignment
 
-### Materials Needed
-- Chrome web browser
-- Account on [Tufts HPC](https://access.tufts.edu/research-cluster-account)
-- [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
+Burrows-Wheeler Aligner ([BWA](http://bio-bwa.sourceforge.net/)) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. 
 
-## Schedule
-- Introduction
-- Part 1
-- Part 2
-- Part 3 
+The Naive approach to read alignment is to compare a read to every position in the reference genome.
+This is too slow!
 
+BWA solves this problem by creating an "index" of our reference sequence for faster lookup.
+
+The following figure shows a short read with a red segment followed by a blue segment that we seek to align to a genome containing many blue and red segments.
+The table keeps track of all the locations where a given pattern (seed sequence) occurs in the reference genome.
+When BWA encounters a new read, it looks up a seed sequence at the beginning of the read. 
+This speeds up the search for potential alignment positions for a given read.
+
+<img src="../img/workflow_align.png" width="400">
+
+It has three algorithms:
+
+- BWA-backtrack: designed for Illumina sequence reads up to 100bp (3-step)
+- BWA-SW:  designed for longer sequences ranging from 70bp to 1Mbp, long-read support and split alignment
+- BWA-MEM: optimized for 70-100bp Illumina reads
+
+We'll use BWA-MEM.
+Underlying the BWA index is the [Burrows-Wheeler Transform](http://web.stanford.edu/class/cs262/presentations/lecture4.pdf)
+
+# BWA Index
+We'll create this index 
+
+1. Change to our reference data directory
+`cd intro-to-ngs/ref_data`
+
+2. Preview our genome using the command `head` by typing:
+
+`head chr10.fa` 
+
+You'll see the first 10 lines of the file `chr10.fa`:
+```buildoutcfg
+>chr10 AC:CM000672.2 gi:568336…   <-- >name
+NNNNNNNNNNNNNNNNNNNNN             <-- sequence
+…
+```
+This is an example of fasta format
+
+3. Load the BWA module, which will give us access to the `bwa` program:
+```
+module load bwa/0.7.17
+```
+
+Test it out without any arguments in order to view the help message.
+```markdown
+bwa
+```
+
+Result:
+```markdown
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1198-dirty
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+…
+```
+
+Use the `index` command to see usage instructions for genome indexing
+
+```markdown
+bwa index
+```
+
+Result
+```markdown
+Usage:   bwa index [options] <in.fasta>
+Options: -a STR    BWT construction algorithm …
+
+```
+
+Run the command:
+```markdown
+bwa index chr10.fa
+```
+
+Result:
+```markdown
+[bwa_index] Pack FASTA... 1.01 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=267594844, availableWord=30828588
+…
+```
+
+When it's done, take a look at the files produced by typing `ls`:
+```markdown
+chr10.fa      <-- Original sequence
+chr10.fa.amb  <-- Location of non-ATGC nucleotides
+chr10.fa.ann  <-- Sequence names, lengths
+chr10.fa.bwt  <-- BWT suffix array
+chr10.fa.pac  <-- Binary encoded sequence
+chr10.fa.sa   <-- Suffix array index
+```
 
 
 

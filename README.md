@@ -1,10 +1,10 @@
-# Introduction to NGS Bioinformatics
+### A Tufts University Research Technology Workshop
 
 ## Description
 This course covers the basics of Next Generation Sequencing Bioinformatics, with the final goal of variant calling and interpretation.
 The material is designed for a 2-3 hour workshop and is run on Tufts High Performance Compute Cluster
 
-## Learning Objectives
+## Goals
 - Writing and running bash scripts
 - Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
 - Variant Calling, Annotation and Interpretation
@@ -31,3 +31,6 @@ The material is designed for a 2-3 hour workshop and is run on Tufts High Perfor
 - [Annotation and Interpretation](lessons/05_Annotation_Interpretation.md)
 
 
+## Acknowledgement
+
+[HBC Training In Depth NGS Analysis Course] (https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course)

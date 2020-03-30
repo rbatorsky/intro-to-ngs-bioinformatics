@@ -5,31 +5,41 @@ Approximate time: 20 minutes
 - Format of FastQ reads
 - Run FastQC to asses quality of reads
 
+## Take a look at our raw data
 
+### Fastq format
+Change into the raw data directory
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+cd raw_data
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Take a look at the first few lines of the first file, using the command `head`
+```markdown
+head na12878_1.fq
+```
 
-### Jekyll Themes
+Result
+```markdown
+@SRR098401.109756285/1                   <-- Sequence identifier: @Read ID / 1 or 2 of pair
+GACTCACGTAACTTTAAACTCTAACAGAAATATACTA…   <-- Sequence
++                                        <-- + (optionally lists the sequence identifier again)
+CAEFGDG?BCGGGEEDGGHGHGDFHEIEGGDDDD…      <-- Quality String
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rbatorsky/galaxy-tutorials/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Base Quality Scores
 
-### Support or Contact
+The symbols we see in the read quality string are an encoding of the quality score:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<img src="../img/base_qual.png" width="400">
+
+A quality score is a prediction of the probability of an error in base calling: 
+
+<img src="../img/base_qual_table.png" width="400">
+
+Looking back at our reads, we can see that the first base:
+
+Encoded quality C -> Q = 34, or the probability < 1/1000 of being an error.
+
+More information from [Illumina](https://www.illumina.com/science/education/sequencing-quality-scores.html)
+ 
+
