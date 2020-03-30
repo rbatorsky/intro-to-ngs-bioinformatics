@@ -34,12 +34,15 @@ The symbols we see in the read quality string are an encoding of the quality sco
 
 This figure shows a mapping of encoded quality score to quality score.
 
+<figure>
 <img src="../img/base_qual.png" width="400">
+<figcaption> Test </figcaption>
+</figure>
 
 A quality score is a prediction of the probability of an error in base calling.
 This table 
 
-<img src="../img/base_qual_table.png" width="600" description="Test">
+<img src="../img/base_qual_table.png" width="600" >
 
 Looking back at our reads, we can see that the first base has an encoded of C.
 Using the, we see that C encodes a quality of 34.

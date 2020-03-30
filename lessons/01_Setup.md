@@ -25,8 +25,8 @@ This indicates you are logged in to the login node.
 # Find 500M storage space for your analysis
 
 1. Check how much available storage you have in your home directory by typing `showquota`.
-You will see, for example:
 
+Result:
 ```
 Home Directory Quota
 Disk quotas for user tutln01 (uid 31394): 
@@ -78,12 +78,14 @@ intro-to-ngs
 ├── README.md                <-- Instructions
 └── ref_data                 <-- Folder with reference sequence
     └── chr10.fa
-2 directories, 5 files
+2 directories, 5 files
 ```
 
 ## Data for the class
 
-GIAB was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" [Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)
+GIAB was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" 
+[Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)
+
 <img src="../img/giab.png" width="400">
 
 We'll be using a DNA Exome sequencing dataset released by Genome In a Bottle (GIAB) for the purposes of benchmarking bioinformatics tools.
@@ -92,6 +94,7 @@ The source DNA, known as NA12878, was taken from a single person: the daughter i
 Father-mother-child 'trios' are often sequenced to utilize genetic links between family members.
 
 Exome sequencing is a method to concentrate the sequenced DNA fragments in coding regions (exons) of the genome.
+
 <img src="../img/NA12878.png" width="400">
 
 For this class, I've created a small dataset that will allow our commands to finish quickly.
