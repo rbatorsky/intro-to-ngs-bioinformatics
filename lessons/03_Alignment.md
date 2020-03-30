@@ -226,12 +226,62 @@ The file has two sections
 Header:
 ```markdown
 @SQ     SN:chr10        LN:133797422        <-- Reference sequence name (SN) and length (LN)
-@RG     ID:reads        SM:na12878          <-- Read group (ID) and sample (SM) information that we input to BWA
+@RG     ID:reads        SM:na12878          <-- Read group (ID) and sample (SM) information that we provided
 @PG ID:bwa PN:bwa VN:0.7.17… CL:bwa mem     <-- Programs and arguments used in processing
 ```
 
 Alignment:
-<img src="../img/sam_body.png" width="400">
+```markdown
+SRR098401.109756285 83  chr10 94760653 60 76M = 94760647 -82 CTAA…    D?@A... 
+SRR098401.109756285 163 chr10 94760647 60 76M = 94760653  82 ATTA…    ?>@@... 
+```
+
+The fields that are important to understand are, in order:
+1. Read ID
+2. Flag: indicates alignment information e.g. paired, aligned, etc.
+Useful site to decode flags: https://broadinstitute.github.io/picard/explain-flags.html
+3. Reference sequence name
+4. Position on the reference sequence where mapping starts
+5. Mapping Quality
+6. CIGAR string: summary of alignment, e.g. match (M), insertion (I), deletion (D)
+7. RNEXT: Name of reference sequence where the other read in the pair aligns
+8. PNEXT: Position in the reference sequence where the other read in the pair aligns
+9. TLEN: Template length, size of the original DNA or RNA fragment
+10. Read Sequence
+11. Read Quality
+12. Optional Fields 
 
 More information on SAM format: [https://samtools.github.io/hts-specs/SAMv1.pdf](https://samtools.github.io/hts-specs/SAMv1.pdf)
 
+
+## Alignment Quality Control
+
+How well did our reads align to the reference genome?
+We'll use a tool called Samtools to summarize the SAM Flags.
+
+```markdown
+module load samtools/1.9
+samtools flagstat na12878.sam
+```
+
+Result:
+```markdown
+9306 + 0 in total (QC-passed reads + QC-failed reads)        <-- We have only QC pass reads
+2 + 0 secondary                                              <-- 2 reads have >1 alignment position 
+0 + 0 supplementary                                          <-- for reads that align to multiple chromosomes
+0 + 0 duplicates                                             
+9271 + 0 mapped (99.62% : N/A)                               <-- For exome data, >90% alignment is expected    
+9304 + 0 paired in sequencing
+4652 + 0 read1
+4652 + 0 read2
+9226 + 0 properly paired (99.16% : N/A)
+9240 + 0 with itself and mate mapped
+29 + 0 singletons (0.31% : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+```
+
+Samtools flagstat is a great way to check to make sure that the aligment meets the quality expected.
+In this case, >99% properly paired and mapped is an exceptional result.
+
+<img src="../img/alignment_summary.png" width="300">
