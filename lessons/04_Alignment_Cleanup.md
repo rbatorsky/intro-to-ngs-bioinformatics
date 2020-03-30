@@ -78,6 +78,52 @@ However, when the duplicates are removed, the number of reads supporting the mut
 <img src="../img/dup_post.png" width="200">
 
 
+Let's add this step to our `picard` script in order to illustrate how to include multiple steps in a single script.
+Note that when we run it, we'll rerun our previous steps as well.
+
+```markdown
+nano picard.sh
+```
+Add the following lines to the end of our script:
+```markdown
+printf  'start mark duplicates\n\n'
+
+picard MarkDuplicates \
+INPUT=results/na12878.srt.bam \
+OUTPUT=results/na12878.srt.markdup.bam \
+METRICS_FILE=results/na12878.markdup.tx
+```
+
+The first line is a formatted print (`printf`) statement that will display useful log lines when our script is running.
+
+To run our script:
+```markdown
+sh picard.sh
+```
+
+In addition to our previous log, we'll see
+```markdown
+…
+starting mark duplicates
+[Fri Nov 22 16:03:41 EST 2019] picard.sam.markduplicates.MarkDuplicates INPUT=…
+Runtime.totalMemory()=9186050048
+```
+### Mark Duplicates Metrics file
+
+
+```markdown
+| LIBRARY | UNPAIRED_READS_EXAMINED | READ_PAIRS_EXAMINED | SECONDARY_OR_SUPPLEMENTARY_RDS | UNMAPPED_READS | UNPAIRED_READ_DUPLICATES | READ_PAIR_DUPLICATES | READ_PAIR_OPTICAL_DUPLICATES | PERCENT_DUPLICATION | ESTIMATED_LIBRARY_SIZE |
+ 
+|---|---|---|---|---|---|---|---|---|---|
+| Unknown | 29 | 4620 | 2 | 35 | 14 | 425 | 0 | 0.093214 | 23546 | 
+
+
+```
+
+
+
+
+
 
 
 the hbc:
