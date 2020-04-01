@@ -27,6 +27,7 @@ The material is designed for a 2-3 hour workshop and is run on Tufts High Perfor
 - [Setup](lessons/01_Setup.md)
 - [Quality Control](lessons/02_Quality_Control.md)
 - [Alignment](lessons/03_Alignment.md)
+- [Alignment Cleanup](lessons/04_Alignment_Cleanup.md)
 - [Variant Calling](lessons/05_Variant_Calling.md)
 - [Annotation and Interpretation](lessons/05_Annotation_Interpretation.md)
 
