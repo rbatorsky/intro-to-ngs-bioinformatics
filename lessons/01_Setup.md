@@ -58,11 +58,11 @@ If you don't know whether you have project space, please email [tts-research@tuf
 Or, if you are using a project directory:
 `cd /cluster/tufts/labname/username/`
 
-3. Copy the course folder:
+3. Copy the course directory:
 `cp /cluster/tufts/bio/tools/intro-to-ngs.tar.gz .`
 (Also available via:  `git clone https://gitlab.tufts.edu/rbator01/intro-to-ngs.git`)
 
-4. Unzip the course folder:
+4. Unzip the course directory:
 `tar -xvzf intro-to-ngs.tar.gz`
 
 5. Take a look at the contents by typing:
@@ -106,7 +106,7 @@ Gene: Cyp2c19 on chromosome 10
 
 Sequencing: Illumina, Paired End, Exome
 
-[Next: Quality Control](02_Quality_Control.md)
+[Previous: Introduction](00_Introduction.md) 
 
-[Previous: Introduction](00_Introduction.md)
+[Next: Quality Control](02_Quality_Control.md)
 
