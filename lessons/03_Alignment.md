@@ -290,6 +290,6 @@ In this case, >99% properly paired and mapped indicates a high quality alignment
 
 <img src="../img/alignment_summary.png" width="500">
 
-[Next: Alignment Cleanup](lessons/04_Alignment_Cleanup.md) 
+[Next: Alignment Cleanup](04_Alignment_Cleanup.md) 
 
-[Previous: Quality Control](lessons/02_Quality_Control.md)
+[Previous: Quality Control](02_Quality_Control.md)
