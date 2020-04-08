@@ -106,6 +106,7 @@ Gene: Cyp2c19 on chromosome 10
 
 Sequencing: Illumina, Paired End, Exome
 
-[Next: Quality Control](lessons/02_Quality_Control.md)
+[Next: Quality Control](lessons/02_Quality_Control.md)   
+
 [Previous: Introduction](lessons/00_Introduction.md)
 
