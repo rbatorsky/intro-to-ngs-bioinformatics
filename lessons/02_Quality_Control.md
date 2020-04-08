@@ -231,4 +231,5 @@ highly duplicated sequences.
 This looks for common adapters in the sequence.
 
 [Next: Alignment](lessons/03_Alignment.md)
-[Previous: Quality Control](lessons/02_Quality_Control.md)
+
+[Previous: Setup](lessons/01_Setup.md)

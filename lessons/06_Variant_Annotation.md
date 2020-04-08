@@ -65,3 +65,5 @@ Allele Frequency (AF) shows that this substation is common in the global populat
 
 ## summary
 <img src="../img/summary_vep.png" width="200">
+
+[Previous: Variant Calling](lessons/05_Variant_Calling.md)

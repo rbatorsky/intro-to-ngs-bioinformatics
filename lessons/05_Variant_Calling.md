@@ -227,6 +227,7 @@ Hover over the colored blocks on the variant track in order to see the informati
 <img src="../img/summary_vcf.png" width="200">
 
 
-[Next: Variant Annotation](lessons/04_Variant_Annotation.md)
-[Previous: Variant Calling](lessons/04_Variant_Calling.md)
+[Next: Variant Annotation](lessons/06_Variant_Annotation.md)
+
+[Previous: Alignment Cleanup](lessons/04_Alignment_Cleanup.md)
 
