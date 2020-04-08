@@ -1,7 +1,6 @@
 Approximate time: 20 minutes
 
 ## Goals
-
 - Format of FastQ files
 - Run FastQC to asses quality of reads
 
@@ -55,9 +54,181 @@ More information on Quality scores from [Illumina](https://www.illumina.com/cont
  
 
 ## FastQC
+FastQC is widely used tool for both DNA and RNA sequencing data that is run on each fastq file.
 
-Now we'll calculate the quality of our reads
+To use, load the module: 
+```bash
+module load fastqc/0.11.8
+```
 
-## MultiQC
+To see the input optins, type:
+```markdown
+fastqc --help
+```
 
-Now we'll aggregate
+Result:
+```markdown
+fastqc --help
+
+            FastQC - A high throughput sequence QC analysis tool
+
+SYNOPSIS
+
+	fastqc seqfile1 seqfile2 .. seqfileN
+
+    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
+           [-c contaminant file] seqfile1 .. seqfileN
+...
+```
+
+Since FastQC can run on multiple files at once, we'll use a wildcard "*" to indicate each file in the folder "raw_data":
+```bash
+mkdir fastqc
+fastqc raw_data/*.fq -o fastqc --extract
+```
+
+Result:
+```markdown
+Started analysis of na12878_1.fq
+Approx 20% complete for na12878_1.fq
+Approx 40% complete for na12878_1.fq
+Approx 65% complete for na12878_1.fq
+Approx 85% complete for na12878_1.fq
+Analysis complete for na12878_1.fq
+Started analysis of na12878_2.fq
+Approx 20% complete for na12878_2.fq
+Approx 40% complete for na12878_2.fq
+Approx 65% complete for na12878_2.fq
+Approx 85% complete for na12878_2.fq
+Analysis complete for na12878_2.fq
+```
+## View results in the On Demand browser
+
+Return to the tab ondemand.cluster.tufts.edu.
+
+On the top menu bar choose Files->Home Directory
+
+Navigate to the `fastqc` folder in course directory, e.g.: `/home/username/intro-to-ngs/fastqc/`
+Right click on the file `na12878_1_fastqc.html` and select `Open in new tab`.
+<img src="../img/od_new_Tab.png" width="400">
+
+The new tab that opens in the browser has the results of FastQC for the first reads in the sample.
+
+###Per base sequence quality
+
+Explanations adapted from [https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf][https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf]
+
+This view shows an overview of the range of quality values across all bases at each
+position in the FastQ file
+
+GOOD BAD
+
+For each position a BoxWhisker type plot is drawn. The elements of the plot are as
+follows:
+- The central red line is the median value
+- The yellow box represents the inter-quartile range (25-75%)
+- The upper and lower whiskers represent the 10% and 90% points
+- The blue line represents the mean quality
+
+The y-axis on the graph shows the quality scores. The higher the score the better the
+base call. The background of the graph divides the y axis into very good quality calls
+(green), calls of reasonable quality (orange), and calls of poor quality (red). The quality of
+calls on most platforms will degrade as the run progresses, so it is common to see base
+calls falling into the orange area towards the end of a read.
+
+
+###Per sequence quality scores
+The per sequence quality score report allows you to see if a subset of your sequences
+have universally low quality values. It is often the case that a subset of sequences will
+have universally poor quality, often because they are poorly imaged (on the edge of the
+field of view etc), however these should represent only a small percentage of the total
+sequences.
+
+GOOD BAD
+
+
+###Per base sequence content
+Per Base Sequence Content plots out the proportion of each base position in a file for
+which each of the four normal DNA bases has been called.
+
+GOOD BAD
+
+In a random library you would expect that there would be little to no difference between
+the different bases of a sequence run, so the lines in this plot should run parallel with each
+other. The relative amount of each base should reflect the overall amount of these bases
+in your genome, but in any case they should not be hugely imbalanced from each other.
+If you see strong biases which change in different bases then this usually indicates an
+overrepresented sequence which is contaminating your library. A bias which is consistent
+across all bases either indicates that the original library was sequence biased, or that
+there was a systematic problem during the sequencing of the library.
+
+###Per sequence GC content
+
+This module measures the GC content across the whole length of each sequence in a file
+and compares it to a modelled normal distribution of GC content.
+
+In a normal random library you would expect to see a roughly normal distribution of GC
+content where the central peak corresponds to the overall GC content of the underlying
+genome. Since we don't know the the GC content of the genome the modal GC content is
+calculated from the observed data and used to build a reference distribution.
+An unusually shaped distribution could indicate a contaminated library or some other kinds
+of biased subset. A normal distribution which is shifted indicates some systematic bias
+which is independent of base position. If there is a systematic bias which creates a shifted
+normal distribution then this won't be flagged as an error by the module since it doesn't
+know what your genome's GC content should be.
+
+###Per base N content
+
+If a sequencer is unable to make a base call with sufficient confidence then it will normally
+substitute an N rather than a conventional base] call
+This module plots out the percentage of base calls at each position for which an N was
+called.
+
+
+###Sequence Length Distribution
+
+Some high throughput sequencers generate sequence fragments of uniform length, but
+others can contain reads of wildly varying lengths. Even within uniform length libraries
+some pipelines will trim sequences to remove poor quality base calls from the end.
+This module generates a graph showing the distribution of fragment sizes in the file which
+was analysed
+
+###Sequence Duplication Levels
+
+In a diverse library most sequences will occur only once in the final set. A low level of
+duplication may indicate a very high level of coverage of the target sequence, but a high
+level of duplication is more likely to indicate some kind of enrichment bias (eg PCR over
+amplification).
+This module counts the degree of duplication for every sequence in the set and creates a
+plot showing the relative number of sequences with different degrees of duplication.
+
+###Overrepresented sequences
+
+A normal high-throughput library will contain a diverse set of sequences, with no individual
+sequence making up a tiny fraction of the whole. Finding that a single sequence is very
+overrepresented in the set either means that it is highly biologically significant, or indicates
+that the library is contaminated, or not as diverse as you expected.
+This module lists all of the sequence which make up more than 0.1% of the total. To
+conserve memory only sequences which appear in the first 200,000 sequences are
+tracked to the end of the file. It is therefore possible that a sequence which is
+overrepresented but doesn't appear at the start of the file for some reason could be
+missed by this module.
+For each overrepresented sequence the program will look for matches in a database of
+common contaminants and will report the best hit it finds. Hits must be at least 20bp in
+length and have no more than 1 mismatch. Finding a hit doesn't necessarily mean that this
+is the source of the contamination, but may point you in the right direction. It's also worth
+pointing out that many adapter sequences are very similar to each other so you may get a
+hit reported which isn't technically correct, but which has very similar sequence to the
+actual match.
+Because the duplication detection requires an exact sequence match over the whole
+length of the sequence any reads over 75bp in length are truncated to 50bp for the
+purposes of this analysis. Even so, longer reads are more likely to contain sequencing
+errors which will artificially increase the observed diversity and will tend to underrepresent
+highly duplicated sequences.
+
+###Adapter Content
+
+This looks for common adapters in the sequence.
+
+[Next: Alignment](lessons/03_Alignment.md)
+[Previous: Quality Control](lessons/02_Quality_Control.md)

@@ -229,3 +229,7 @@ Next, we'll explore the meaning of these variants.
 the hbc:
 https://github.com/hbc/NGS_Data_Analysis_Course/blob/master/sessionVI/lessons/01_alignment.md
 
+
+[Next: Variant Calling](lessons/04_Variant_Calling.md)
+[Previous: Alignment Cleanup](lessons/04_Alignment_Cleanup.md)
+

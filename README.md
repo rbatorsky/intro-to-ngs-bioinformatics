@@ -1,8 +1,9 @@
 ### A Tufts University Research Technology Workshop
 
 ## Description
-This course covers the basics of Next Generation Sequencing Bioinformatics, with the final goal of variant calling and interpretation.
-The material is designed for a 2-3 hour workshop and is run on Tufts High Performance Compute Cluster
+This course covers the basics of Next Generation Sequencing Bioinformatics, with the goal of 
+variant calling and interpretation.
+The material is designed for a 2-3 hour workshop and is run on [Tufts High Performance Compute (HPC) Cluster](https://access.tufts.edu/research-cluster-account).
 
 ## Goals
 - Writing and running bash scripts
@@ -33,5 +34,4 @@ The material is designed for a 2-3 hour workshop and is run on Tufts High Perfor
 
 
 ## Acknowledgement
-
-[HBC Training In Depth NGS Analysis Course] (https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course)
+Much of this workshop has been adapted from the [HBC Training In Depth NGS Analysis Course](https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course)

@@ -7,10 +7,10 @@ Approximate time: 20 minutes
 # Log into the HPC cluster's On Demand interface
 1. Open a Chrome browser visit [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
-3. Choose Clusters->HPC Shell Access
-<img src="../img/od_menu.png" width="400">
+3. On the top menu bar choose Clusters->HPC Shell Access
+<img src="../img/od_terminal.png" width="400">
 
-4. Type your password at the prompt which appears (the password will be hidden for security purposes):
+4. Type your password at the prompt (the password will be hidden for security purposes):
 
 `tutln01@login.cluster.tufts.edu's password:`
 
@@ -22,7 +22,9 @@ This indicates you are logged in to the login node.
 
 6. Type `clear` to clear the screen
  
-# Find 500M storage space for your analysis
+# Set up for the analysis
+
+## Find 500M storage space
 
 1. Check how much available storage you have in your home directory by typing `showquota`.
 
@@ -46,9 +48,7 @@ Here, the user has used 1222M/5120M and has enough space for our 500M analysis.
 These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/username/`. 
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
-# Set up for our analysis
-
-## Get the data
+## Download the data
 1. Get an interaction session on a compute node by typing:
 
 `srun --pty -t 3:00:00  --mem 16G  -N 1 -n 4 bash`
@@ -60,6 +60,7 @@ Or, if you are using a project directory:
 
 3. Copy the course folder:
 `cp /cluster/tufts/bio/tools/intro-to-ngs.tar.gz .`
+(Also available via:  `git clone https://gitlab.tufts.edu/rbator01/intro-to-ngs.git`)
 
 4. Unzip the course folder:
 `tar -xvzf intro-to-ngs.tar.gz`
@@ -105,4 +106,6 @@ Gene: Cyp2c19 on chromosome 10
 
 Sequencing: Illumina, Paired End, Exome
 
+[Next: Quality Control](lessons/02_Quality_Control.md)
+[Previous: Introduction](lessons/00_Introduction.md)
 
