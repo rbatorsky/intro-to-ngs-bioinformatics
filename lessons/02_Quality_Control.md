@@ -82,6 +82,7 @@ SYNOPSIS
 
 Since FastQC can run on multiple files at once, we'll use a wildcard "*" to indicate each file in the folder "raw_data":
 ```bash
+cd ..
 mkdir fastqc
 fastqc raw_data/* -o fastqc --extract
 ```
@@ -106,14 +107,17 @@ Analysis complete for na12878_2.fq
 Return to the tab [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 
 On the top menu bar choose Files->Home Directory
+
 <img src="../img/od_files.png" width="400">
 
 Navigate to the `fastqc` folder in course directory, e.g.: `/home/username/intro-to-ngs/fastqc/`
 Right click on the file `na12878_1_fastqc.html` and select `Open in new tab`.
 
-<img src="../img/od_new_Tab.png" width="400">
+<img src="../img/od_new_tab.png" width="400">
 
 The new tab that opens in the browser has the results of FastQC for the first reads in the sample.
+We'll go through each plot.  
+Note that the plots shown below are for the entire sample in order to avoid artifacts of the small subsample.
 
 ### Per base sequence quality
 
@@ -122,7 +126,7 @@ Explanations adapted from [https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf][h
 This view shows an overview of the range of quality values across all bases at each
 position in the FastQ file
 
-GOOD BAD
+<img src="../img/fastqc_per_base_qual.png" width="400">
 
 For each position a BoxWhisker type plot is drawn. The elements of the plot are as
 follows:
@@ -145,14 +149,13 @@ have universally poor quality, often because they are poorly imaged (on the edge
 field of view etc), however these should represent only a small percentage of the total
 sequences.
 
-GOOD BAD
-
+<img src="../img/fastqc_per_sequence_qual.png" width="400">
 
 ###Per base sequence content
 Per Base Sequence Content plots out the proportion of each base position in a file for
 which each of the four normal DNA bases has been called.
 
-GOOD BAD
+<img src="../img/fastqc_per_seq_content.png" width="400">
 
 In a random library you would expect that there would be little to no difference between
 the different bases of a sequence run, so the lines in this plot should run parallel with each
@@ -167,6 +170,8 @@ there was a systematic problem during the sequencing of the library.
 
 This module measures the GC content across the whole length of each sequence in a file
 and compares it to a modelled normal distribution of GC content.
+
+<img src="../img/fastqc_gc.png" width="400">
 
 In a normal random library you would expect to see a roughly normal distribution of GC
 content where the central peak corresponds to the overall GC content of the underlying
@@ -185,6 +190,7 @@ substitute an N rather than a conventional base] call
 This module plots out the percentage of base calls at each position for which an N was
 called.
 
+<img src="../img/fastqc_n.png" width="400">
 
 ###Sequence Length Distribution
 
@@ -194,14 +200,19 @@ some pipelines will trim sequences to remove poor quality base calls from the en
 This module generates a graph showing the distribution of fragment sizes in the file which
 was analysed
 
+<img src="../img/fastqc_length.png" width="400">
+
 ###Sequence Duplication Levels
 
 In a diverse library most sequences will occur only once in the final set. A low level of
 duplication may indicate a very high level of coverage of the target sequence, but a high
 level of duplication is more likely to indicate some kind of enrichment bias (eg PCR over
 amplification).
+
 This module counts the degree of duplication for every sequence in the set and creates a
 plot showing the relative number of sequences with different degrees of duplication.
+
+<img src="../img/fastqc_dup.png" width="400">
 
 ###Overrepresented sequences
 
@@ -229,7 +240,54 @@ highly duplicated sequences.
 
 ###Adapter Content
 
-This looks for common adapters in the sequence.
+This module looks for common adapters in the sequence.
+
+<img src="../img/fastqc_adapter.png" width="400">
+
+## Optional: Read trimming
+
+In our `Per base sequence quality` we saw that the read quality dropped towards the end of the read.
+This means that there are likely errors in the data.
+In order to ensure alignment and variant calling are as accurate as possible, we can perform quality trimming of reads.
+
+[Trim Galore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md) is a popular tool 
+that in the default mode performs:
+Quality trimming: Trims low quality bases from the 3' end of the read
+Adapter trimming: Automatically detects and removes known Illumina adapters that may be present in the data
+
+To perform trimming on the data, we first load the software:
+```
+module load anaconda/3
+source activate /cluster/tufts/bio/tools/conda_envs/trim_galore/
+```
+
+To run:
+```
+mkdir trim
+trim_galore -o trim raw_data/*
+```
+
+Result:
+```
+...
+=== Summary ===
+
+Total reads processed:                   4,652
+Reads with adapters:                     1,606 (34.5%)
+Reads written (passing filters):         4,652 (100.0%)
+
+Total basepairs processed:       353,552 bp
+Quality-trimmed:                  24,906 bp (7.0%)
+Total written (filtered):        326,448 bp (92.3%)
+...
+```
+
+Note that Trim Galore may trim adapters [even in the case where FastQC found no adapters](https://github.com/FelixKrueger/TrimGalore/issues/15).
+This is because Trim Galore will remove partial adapters at the ends of reads.
+
+The result after trimming is much improved:
+<img src="../img/fastqc_dup.png" width="400">
+
 
 [Previous: Setup](01_Setup.md)
 

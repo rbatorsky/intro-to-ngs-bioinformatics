@@ -98,7 +98,7 @@ Exome sequencing is a method to concentrate the sequenced DNA fragments in codin
 
 <img src="../img/NA12878.png" width="400">
 
-For this class, I've created a small dataset that will allow our commands to finish quickly.
+For this class, I've created a small dataset of reads that align to a single gene that will allow our commands to finish quickly.
 
 Sample: NA12878
 
