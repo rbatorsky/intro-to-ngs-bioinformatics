@@ -4,7 +4,7 @@ Approximate time: 20 minutes
 - Understand FASTQ file format
 - Run FastQC to asses data quality
 
-## Take a look at our raw data
+## Assess the quality of the raw data
 
 ### FASTQ format
 
