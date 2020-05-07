@@ -249,7 +249,7 @@ This module looks for common adapters in the sequence.
 
 Explanations adapted from [https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf][https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf]
 
-## Optional pipeline step: Read trimming
+## Optional: Read trimming
 
 In our `Per base sequence quality` we saw that the read quality dropped towards the end of the read.
 In order to ensure alignment and variant calling are as accurate as possible, we can perform quality trimming of reads.

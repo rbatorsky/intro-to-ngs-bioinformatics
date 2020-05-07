@@ -4,7 +4,7 @@ Approximate time: 20 minutes
 - Connect to the HPC cluster via On Demand Interface
 - Download data
 
-# Log into the HPC cluster's On Demand interface
+## Log into the HPC cluster's On Demand interface
 1. Open a Chrome browser and enter the URL [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
 3. On the top menu bar choose Clusters->HPC Shell Access
@@ -22,9 +22,9 @@ This indicates you are logged in to the login node of the cluster.
 
 6. Type `clear` to clear the screen
  
-# Set up for the analysis
+## Set up for the analysis
 
-## Find 500M storage space
+### Find 500M storage space
 
 1. Check how much available storage you have in your home directory by typing `showquota`.
 
@@ -48,7 +48,7 @@ Here, the user has used 1222M of the available 5120M and has enough space for ou
 These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/username/`. 
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
-## Download the data
+### Download the data
 1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cores on 1 node) by typing:
 
 `srun --pty -t 3:00:00  --mem 16G  -N 1 -n 4 bash`
@@ -85,7 +85,7 @@ intro-to-ngs
 2 directories, 5 files
 ```
 
-## Data for the class
+### Data for the class
 
 Genome In a Bottle (GIAB) was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" 
 ([Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)).  We'll be using a DNA Whole Exome Sequencing (WES) dataset released by GIAB for the purposes of benchmarking bioinformatics tools.

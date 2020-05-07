@@ -6,7 +6,7 @@ Approximate time: 20 minutes
 
 <img src="../img/workflow_align.png" width="200">
 
-# BWA Alignment
+## BWA Overview
 
 Burrows-Wheeler Aligner ([BWA](http://bio-bwa.sourceforge.net/)) is a software package for mapping low-divergent 
 sequences against a large reference genome, such as the human genome. 
@@ -33,7 +33,7 @@ It has three algorithms:
 We'll use BWA-MEM.
 Underlying the BWA index is the [Burrows-Wheeler Transform](http://web.stanford.edu/class/cs262/presentations/lecture4.pdf)
 
-# BWA Index
+## BWA Index
 We'll create this index 
 
 1. Change to our reference data directory
