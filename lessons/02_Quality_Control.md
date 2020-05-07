@@ -247,10 +247,11 @@ This module looks for common adapters in the sequence.
 
 <img src="../img/adapter_content.png" width="400">
 
-## Optional: Read trimming
+Explanations adapted from [https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf][https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf]
+
+## Optional pipeline step: Read trimming
 
 In our `Per base sequence quality` we saw that the read quality dropped towards the end of the read.
-This means that there are likely errors in the data.
 In order to ensure alignment and variant calling are as accurate as possible, we can perform quality trimming of reads.
 
 [Trim Galore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md) is a popular tool 
@@ -291,4 +292,3 @@ This is because Trim Galore will remove partial adapters at the ends of reads.
 The result after trimming is much improved:
 <img src="../img/fastqc_dup.png" width="4
 
-Explanations adapted from [https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf][https://dnacore.missouri.edu/PDF/FastQC_Manual.pdf]
