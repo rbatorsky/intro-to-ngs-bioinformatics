@@ -5,7 +5,7 @@ Approximate time: 20 minutes
 - Download data
 
 # Log into the HPC cluster's On Demand interface
-1. Open a Chrome browser visit [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
+1. Open a Chrome browser and enter the URL [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
 3. On the top menu bar choose Clusters->HPC Shell Access
 <img src="../img/od_terminal.png" width="400">
@@ -18,7 +18,7 @@ Approximate time: 20 minutes
 
 `[tutln01@login001 ~]$`
 
-This indicates you are logged in to the login node.
+This indicates you are logged in to the login node of the cluster.
 
 6. Type `clear` to clear the screen
  
@@ -42,30 +42,33 @@ Group: facstaff	Usage: 16819478240KB	Quota: 214748364800KB	Percent Used: 7.00%
 ```
 
 Under `blocks` you will see the amount of storage you are using, and under quota you see your quota. 
-Here, the user has used 1222M/5120M and has enough space for our 500M analysis.
+Here, the user has used 1222M of the available 5120M and has enough space for our analysis.
  
 2. If you do not have 500M available, you may have space in a project directory for your lab. 
 These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/username/`. 
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
 ## Download the data
-1. Get an interaction session on a compute node by typing:
+1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cores on 1 node) by typing:
 
 `srun --pty -t 3:00:00  --mem 16G  -N 1 -n 4 bash`
 
 2. Change to your home directory
+
 `cd `
+
 Or, if you are using a project directory:
+
 `cd /cluster/tufts/labname/username/`
 
-3. Copy the course directory:
-`cp /cluster/tufts/bio/tools/intro-to-ngs.tar.gz .`
+3. Copy the course directory and all files in the directory (-R is for recursive):   
+
+`cp -R /cluster/tufts/bio/tools/intro-to-ngs/ .`   
+
 (Also available via:  `git clone https://gitlab.tufts.edu/rbator01/intro-to-ngs.git`)
 
-4. Unzip the course directory:
-`tar -xvzf intro-to-ngs.tar.gz`
-
-5. Take a look at the contents by typing:
+4. Take a look at the contents using the `tree` command: 
+  
 `tree intro-to-ngs`
 
 You'll see a list of all files
@@ -84,21 +87,19 @@ intro-to-ngs
 
 ## Data for the class
 
-GIAB was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" 
-[Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)
-
+Genome In a Bottle (GIAB) was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" 
+([Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)).  We'll be using a DNA Whole Exome Sequencing (WES) dataset released by GIAB for the purposes of benchmarking bioinformatics tools.
 <img src="../img/giab.png" width="400">
 
-We'll be using a DNA Exome sequencing dataset released by Genome In a Bottle (GIAB) for the purposes of benchmarking bioinformatics tools.
+The source DNA, known as NA12878, was taken from a single person: the daughter in a father-mother-child 'trio'.
+She is also mother to 11 children of her own, for whom sequence data is also available. ([HBC Training](https://hbctraining.github.io/In-depth-NGS-Data-Analysis-Course/sessionVI/lessons/01_alignment.html)). 
+Father-mother-child 'trios' are often sequenced to study genetic links between family members.
 
-The source DNA, known as NA12878, was taken from a single person: the daughter in a father-mother-child 'trio' (she is also mother to 11 children of her own) [Find link](). 
-Father-mother-child 'trios' are often sequenced to utilize genetic links between family members.
-
-Exome sequencing is a method to concentrate the sequenced DNA fragments in coding regions (exons) of the genome.
+As mentioned in the introduction, WES is a method to concentrate the sequenced DNA fragments in coding regions (exons) of the genome.
 
 <img src="../img/NA12878.png" width="400">
 
-For this class, I've created a small dataset of reads that align to a single gene that will allow our commands to finish quickly.
+For this class, we've created a small dataset of reads that align to a single gene that will allow our commands to finish quickly.
 
 Sample: NA12878
 

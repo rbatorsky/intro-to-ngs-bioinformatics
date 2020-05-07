@@ -3,11 +3,12 @@
 ## Description
 This course covers the basics of Next Generation Sequencing Bioinformatics, with the goal of 
 variant calling and interpretation.
-The material is designed for a 2-3 hour workshop and is run on [Tufts High Performance Compute (HPC) Cluster](https://access.tufts.edu/research-cluster-account).
+The material is designed to be a 3 hour workshop and is run on [Tufts High Performance Compute (HPC) Cluster](https://access.tufts.edu/research-cluster-account).
+For support with this workshop or the HPC cluster, email TTS Research Technology [tts-research@tufts.edu](mailto:ltts-research@tufts.edu)
 
 ## Goals
 - Writing and running bash scripts
-- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK
+- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK, VEP
 - Variant Calling, Annotation and Interpretation
 
 <img src="img/workflow.png" width="200">
