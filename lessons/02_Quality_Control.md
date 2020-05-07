@@ -165,7 +165,7 @@ This plot allows will show a peak toward lower mean quality if there is a subset
 
 <img src="../img/fastqc_per_sequence_qual.png" width="400">
 
-###Per base sequence content
+### Per base sequence content
 The Per Base Sequence Content plot shows the the proportion of each base called at each position in the read, 
 for all reads in the file.
 
@@ -180,7 +180,7 @@ with adapter dimers (from sequencing.qcfail.com)[https://sequencing.qcfail.com/a
 
 <img src="../img/per_base_dimers.png" width="400">
 
-###Per sequence GC content
+### Per sequence GC content
 
 This plot displays the fraction of G and C bases across for all sequences in the file.
 and compares it to a modelled normal distribution of GC content.
@@ -194,7 +194,7 @@ An unusually shaped distribution could indicate a contaminated library or some o
 of biased subset. A normal distribution which is shifted indicates some systematic bias
 which is independent of base position.
 
-###Per base N content
+### Per base N content
 
 If a sequencer is unable to make a base call with sufficient confidence then it will normally
 substitute an N rather than a conventional base. 
@@ -202,7 +202,7 @@ This plot shows the percentage of base calls at each position for which an N was
 
 <img src="../img/fastqc_n.png" width="400">
 
-###Sequence Length Distribution
+### Sequence Length Distribution
 
 This plot shows the distribution of read sizes in the file.
 Depending on the sequencing method and whether reads have been post-processed, it may be expected to have reads of a 
@@ -211,7 +211,7 @@ For our raw WES dataset we see a sharp peak at 76 bases, as expected.
 
 <img src="../img/fastqc_length.png" width="400">
 
-###Sequence Duplication Levels
+### Sequence Duplication Levels
 
 This plot shows the distribution of sequence duplicates in the file.
 For example, in the below plot, over 80% of the total sequences are present only once and 10% are present twice.
@@ -222,7 +222,7 @@ In a diverse library most sequences will occur only once in the final set. A hig
 level of duplication may indicate low library complexity or an enrichment bias (e.g. PCR over
 amplification).
 
-###Overrepresented sequences
+### Overrepresented sequences
 
 This plot shows the sequences in the file which make up more than 0.1% of the total.
 A normal high-throughput library will contain a diverse set of sequences, with no individual
