@@ -178,7 +178,7 @@ module load bwa/0.7.17
 bwa mem \
 -t 2 \
 -M \
--R "@RG\tID:reads\tSM:na12878" \
+-R "@RG\tID:reads\tSM:na12878\tPL:illumina" \
 -o results/na12878.sam \
 ref_data/chr10.fa \
 raw_data/na12878_1.fq \
@@ -195,7 +195,7 @@ is assigned to short reads that have read segments mapped to distant locations.
 It optionn is needed for GATK/Picard compatibility, which are tools we use downstream. [see this explanation on biostars](https://www.biostars.org/p/97323/
 )
 
-3. `-R "@RG\tID:reads\tSM:na12878" `: Add a read group tag (RG) and a sample name (SM) to our alignment file header. 
+3. `-R "@RG\tID:reads\tSM:na12878\tPL:illumina" `: Add a read group tag (RG), sample name (SM), and platform (PL) to our alignment file header. 
 We'll see where this appears in our output. In addition to being required for GATK, it's advisable to always add these 
 labels to make the origin of the reads clear.
 

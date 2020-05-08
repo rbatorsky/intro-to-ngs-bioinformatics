@@ -2,7 +2,7 @@ Approximate time: 20 minutes
 
 ## Learning Objectives
 
-- Use Genome Analysis Tool Kit (GATK) to call variants on the alignment
+- Use Genome Analysis Tool Kit (GATK) to call variants present in our sample
 
 <img src="../img/alignment_cleanup_summary.png" width="200">
 

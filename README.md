@@ -31,7 +31,7 @@ For support with this workshop or the HPC cluster, email TTS Research Technology
 - [Alignment](lessons/03_Alignment.md)
 - [Alignment Cleanup](lessons/04_Alignment_Cleanup.md)
 - [Variant Calling](lessons/05_Variant_Calling.md)
-- [Annotation and Interpretation](lessons/05_Annotation_Interpretation.md)
+- [Annotation and Interpretation](lessons/06_Variant_Annotation.md)
 
 
 ## Acknowledgement
