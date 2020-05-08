@@ -255,11 +255,14 @@ In our `Per base sequence quality` we saw that the read quality dropped towards 
 In order to ensure alignment and variant calling are as accurate as possible, we can perform quality trimming of reads.
 
 [Trim Galore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md) is a popular tool 
-that in the default mode performs:
+that in the default mode performs two types of trimming:
 Quality trimming: Trims low quality bases from the 3' end of the read
 Adapter trimming: Automatically detects and removes known Illumina adapters that may be present in the data
 
-To perform trimming on the data, we first load the software:
+To perform trimming on the data, we first load the software which is installed as an a conda environment.
+For more information on using anaconda on the HPC, see [this tutorial](https://sites.tufts.edu/biotools/files/2019/07/conda_on_hpc.pdf).
+
+### HERE
 ```
 module load anaconda/3
 source activate /cluster/tufts/bio/tools/conda_envs/trim_galore/
@@ -292,3 +295,6 @@ This is because Trim Galore will remove partial adapters at the ends of reads.
 The result after trimming is much improved:
 <img src="../img/fastqc_dup.png" width="4
 
+[Next: Alignment](03_Alignment.md)
+
+[Previous: Setup](01_Setup.md)

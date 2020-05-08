@@ -49,9 +49,9 @@ These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/us
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
 ### Download the data
-1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cores on 1 node) by typing:
+1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cpu on 1 node) by typing:
 
-`srun --pty -t 3:00:00  --mem 16G  -N 1 -n 4 bash`
+`srun --pty -t 3:00:00  --mem 16G  -N 1 --cpus 4 bash`
 
 2. Change to your home directory
 
@@ -107,7 +107,7 @@ Gene: Cyp2c19 on chromosome 10
 
 Sequencing: Illumina, Paired End, Exome
 
-[Previous: Introduction](00_Introduction.md) 
-
 [Next: Quality Control](02_Quality_Control.md)
+
+[Previous: Introduction](00_Introduction.md) 
 

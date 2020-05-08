@@ -2,22 +2,21 @@ Approximate time: 20 minutes
 
 ## Learning Objectives
 
-- Sort and Index SAM/BAM file
+- Sort and Index SAM/BAM files
 - Mark duplicate reads in BAM file
 
 <img src="../img/workflow_cleanup.png" width="200">
 
 ## Sort SAM file
 
-It's necessary for downstream applications to sort reads by reference genome coordinates.
+Downstream applications require that reads in SAM files be sorted by reference genome coordinates (fields 3 and 4 in each line of our SAM file).
 This will assist in fast search, display and other functions.
-```markdown
-SRR098401.109756285 163 chr10 94760647 60 76M = 94760653  82 ATTA…    ?>@@... 
-                        ^^^^^^^^^^^^^^
-                         coordinates
-```
+ 
+1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 
+------|------|-----|----|------|------|-----|----|------|-----|---- 
+SRR098401.109756285 |83 | chr10 |94760653 |60 |76M | = | 94760647 | -82 | CTAA… | D?@A... |
 
-We’ll use the [Picard](https://broadinstitute.github.io/picard/) toolkit for SAM file manipulation.
+We’ll use the [Picard](https://broadinstitute.github.io/picard/) toolkit for this and othter SAM file manipulations.
 
 Open another script in our course directory called picard.sh
 ```markdown
@@ -45,12 +44,13 @@ To run the script:
 sh picard.sh
 ```
 
-
-Result 
+Result:
 ```markdown
-[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam …
-…
-[Fri Nov 22 15:33:22 EST 2019] picard.sam.SortSam done. 
+[Fri May 08 15:38:55 EDT 2020] picard.sam.SortSam INPUT=results/na12878.sam OUTPUT=results/na12878.srt.bam SORT_ORDER=coordinate    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Fri May 08 15:38:55 EDT 2020] Executing as rbator01@pcomp31 on Linux 2.6.32-696.1.1.el6.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.8.0-SNAPSHOT
+INFO	2020-05-08 15:38:56	SortSam	Finished reading inputs, merging and writing to output now.
+[Fri May 08 15:38:57 EDT 2020] picard.sam.SortSam done. Elapsed time: 0.02 minutes.
+Runtime.totalMemory()=2058354688 
 ```
 
 Take a look at the results directory:
@@ -58,24 +58,24 @@ Take a look at the results directory:
 ls results
 ```
 
-Result:
+The result shows that the sorted BAM file has been created:
 ```markdown
-na12878.sam  
-na12878.srt.bam 
+na12878.sam  na12878.srt.bam 
 ```
 
 ## Mark Duplicates in BAM file
-In the sequencing process, many copies are made of a DNA fragment
-The amount of duplication may not be the same for all sequences and can cause biases in variant calling
-Therefore, we mark the duplicates so the variant caller can ignore them.
-
+Many copies are made of a single DNA fragment during the sequencing process.
+The amount of duplication may not be the same for all sequences and this can cause biases in variant calling.
+Therefore, we mark the duplicates so the variant caller can focus on the unique reads.
 
 Duplicate reads are identified based on their alignment coordinates and CIGAR string.
 For example, the below alignment appears to have a G to A mutation in the majority of reads:
-<img src="../img/dup_pre.png" width="200">
+
+<img src="../img/dup_pre.png" width="500">
 
 However, when the duplicates are removed, the number of reads supporting the mutation drops to one.
-<img src="../img/dup_post.png" width="200">
+
+<img src="../img/dup_post.png" width="500">
 
 
 Let's add this step to our `picard` script in order to illustrate how to include multiple steps in a single script.
