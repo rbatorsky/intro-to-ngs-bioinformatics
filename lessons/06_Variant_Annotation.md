@@ -10,19 +10,22 @@ Approximate time: 20 minutes
 
 We'll download the VCF from the cluster.
 1. Go back to [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
-2. In the top grey menu, click Files->Home Directory
-<img src="../img/od_download.png" width="200">
+2. In the top grey menu, click `Files` and select `Home Directory`.
 
-3. Select intro-to-ngs->results->na12878.vcf
+<img src="../img/od_download.png" width="500">
+
+3. Select `intro-to-ngs/results/na12878.vcf`
+
 <img src="../img/od_download_2.png" width="200">
 
-4. Click Download
+4. Click `Download`
 
 ## Run VEP
 
-1. Point a web browser to [https://useast.ensembl.org/Tools/VEP](https://useast.ensembl.org/Tools/VEP)
-Note that VEP can also be run on the command line on our HPC, but the result is a text file.
-For single VCF analysis, the web server is reccomended.
+1. In web browser tab, navigate to to [https://useast.ensembl.org/Tools/VEP](https://useast.ensembl.org/Tools/VEP)
+Note that VEP can also be run on the command line on our HPC, resulting in a text file (txt or vcf). 
+You are welcome to ask for instructions to run the command line VEP.
+For single VCF analysis, the web server is recommended. 
 
 2. Choose species `Human (Homo sapiens)` (should be the default)
 
@@ -31,13 +34,14 @@ For single VCF analysis, the web server is reccomended.
 3. Under `Transcript database to use` select `RefSeq transcripts`
 <img src="../img/vep.png" width="200">
 
-4. Click Run
+4. Click `Run`
 
 ### Viewing VEP results
 
-When your job is done, click “View Results”
+When your job is done, click `View Results`
 <img src="../img/vep_results_1.png" width="200">
 
+### HERE ####
 missense_variants change the amino acid
 Let’s investigate!  
 
