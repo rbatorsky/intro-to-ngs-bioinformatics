@@ -2,7 +2,7 @@ Approximate time: 20 minutes
 
 ## Learning Objectives
 
-- Use Genome Analysis Tool Kit (GATK) to call variants present in our sample
+Use Genome Analysis Tool Kit (GATK) to call variants
 
 <img src="../img/workflow_vc.png" width="200">
 
@@ -10,9 +10,8 @@ Approximate time: 20 minutes
 
 GATK requires a Sequence Dictionary for reference genomes used in variant calling.
 The sequence dictionary contains names and lengths of all chromosomes in the reference genome.
-The information in this file is transferred to the Variant Call File (VCF) that we will produce.
-It is also used as a quality control check in all subsequent GATK steps, to make sure that the supplied reference 
-matches the information in the dictionary.
+The information in this file is transferred to the Variant Call File (VCF) when it is produced, so that there is no 
+ambiguity about which reference was used to produce the file.
 
 Let's open a new script
 ```markdown

@@ -2,21 +2,22 @@ Approximate time: 20 minutes
 
 ## Learning Objectives
 
-- Use the Variant Effect Predictor (VEP) online web server 
+- Use the Variant Effect Predictor (VEP) online web server to annotate variants 
 
 <img src="../img/workflow_ann.png" width="200">
 
 ## Download the VCF
 
-We'll download the VCF from the cluster.
+First, we'll download the VCF from the cluster to our local computer.
+
 1. Go back to [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
 2. In the top grey menu, click `Files` and select `Home Directory`.
 
-<img src="../img/od_download.png" width="500">
+<img src="../img/od_files.png" width="500">
 
 3. Select `intro-to-ngs/results/na12878.vcf`
 
-<img src="../img/od_download_2.png" width="200">
+<img src="../img/od_files_2.png" width="500">
 
 4. Click `Download`
 
@@ -25,14 +26,14 @@ We'll download the VCF from the cluster.
 1. In web browser tab, navigate to to [https://useast.ensembl.org/Tools/VEP](https://useast.ensembl.org/Tools/VEP)
 Note that VEP can also be run on the command line on our HPC, resulting in a text file (txt or vcf). 
 You are welcome to ask for instructions to run the command line VEP.
-For single VCF analysis, the web server is recommended. 
+For single VCF analysis, the web server is recommended in order to take advantage of the visualization tools. 
 
-2. Choose species `Human (Homo sapiens)` (should be the default)
+2. In the `Species` section choose `Human (Homo sapiens)` (should be the default)
 
-3. Next to `Or upload file:` navigate to the downloaded file `na12878.vcf`
+3. In the `Input data` section choose `Or upload file:` and navigate to the downloaded file `na12878.vcf`
 
 3. Under `Transcript database to use` select `RefSeq transcripts`
-<img src="../img/vep.png" width="200">
+<img src="../img/vep.png" width="500">
 
 4. Click `Run`
 
