@@ -220,15 +220,15 @@ We can add a VCF track to our IGV windows.
 2. Click the `File` menu and select `Load from File`
 3. Select the file `na12878.vcf`
 
-<img src="../img/igv_vcf_1.png" width="200">
+<img src="../img/igv_vcf_1.png" width="500">
 
 3. We'll see a variant track appear above the coverage track.
 Hover over the colored blocks on the variant track in order to see the information in the VCF.
 
-<img src="../img/igv_vcf_2.png" width="200">
+<img src="../img/igv_vcf_2.png" width="500">
 
 ## Summary
-<img src="../img/summary_vcf.png" width="400">
+<img src="../img/summary_vcf.png" width="500">
 
 [Next: Variant Annotation](06_Variant_Annotation.md)
 
