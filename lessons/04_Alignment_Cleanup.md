@@ -266,7 +266,7 @@ It appear there are two variants next to each other: heterozygous`C>T` at positi
 
 This lesson adapted from [HBC NGS Data Analysis](https://github.com/hbc/NGS_Data_Analysis_Course/blob/master/sessionVI/lessons/01_alignment.md)
 
-[Next: Variant Calling](04_Variant_Calling.md)
+[Next: Variant Calling](05_Variant_Calling.md)
 
-[Previous: Alignment Cleanup](04_Alignment_Cleanup.md)
+[Previous: Alignment ](03_Alignment_Cleanup.md)
 

@@ -4,7 +4,7 @@ Approximate time: 20 minutes
 
 - Use Genome Analysis Tool Kit (GATK) to call variants present in our sample
 
-<img src="../img/alignment_cleanup_summary.png" width="200">
+<img src="../img/workflow_vc.png" width="200">
 
 ## Prepare the reference sequence for GATK
 
@@ -229,7 +229,7 @@ Hover over the colored blocks on the variant track in order to see the informati
 <img src="../img/igv_vcf_2.png" width="200">
 
 ## Summary
-<img src="../img/summary_vcf.png" width="200">
+<img src="../img/summary_vcf.png" width="400">
 
 [Next: Variant Annotation](06_Variant_Annotation.md)
 
