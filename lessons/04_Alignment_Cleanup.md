@@ -194,8 +194,10 @@ na12878.srt.markdup.bai     <--- Index file
 1. With a Chrome web browser, visit [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
 2. Login with your Tufts credentials
 3. Choose Interactive Apps->IGV. Set parameters, click “Launch”
+
 <img src="../img/od_igv_1.png" width="500">
 4. Choose the following compute resource parameters: 1 hour, 2 cores, 4 GB memory, Default Batch Parition, Default Reservation
+
 <img src="../img/od_igv_2.png" width="500">
 5. Click the blue button “Launch NoVNC in New Tab” when it appears
 
@@ -225,9 +227,11 @@ Click the square icon in the top right corner to maximize the window.
 6. Navigate to the results folder in the course directory, e.g. `/cluster/home/your-user-name/intro-to-ngs/results`.  
 
 7. Select `na12878.srt.markdup.bam`
+
 <img src="../img/igv_4.png" width="500">
 
 You will have the following view:
+
 <img src="../img/igv_genome.png" width="500">
 
 Each row of data is called a track. There are five tracks visible: the top track shows the pq bands of the entire
@@ -239,7 +243,7 @@ respectively) which don't yet show data, followed by a reference genome annotati
 1. In the box indicated in green below, type gene name "Cyp2c19" and hit enter.
 You will see the gene model display in the “Genes” track, showing vertical bars where exons are located
 
-<img src="../img/igv_5.png" width="200">
+<img src="../img/igv_5.png" width="500">
 
 Troubleshooting tip: At times IGV on demand will stop allowing the user to type input.
 If that happens, close the tab, go back to the on demand window, rejoin the session by clicking `Launch NoVNC in New Tab`.
