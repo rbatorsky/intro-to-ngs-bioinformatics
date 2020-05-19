@@ -195,13 +195,14 @@ na12878.srt.markdup.bai     <--- Index file
 2. Login with your Tufts credentials
 3. Choose Interactive Apps->IGV. Set parameters, click “Launch”
 
+3. Choose `Interactive Apps->IGV`. Set parameters below and , click `Launch`
 <img src="../img/od_igv_1.png" width="500">
 4. Choose the following compute resource parameters: 1 hour, 2 cores, 4 GB memory, Default Batch Parition, Default Reservation
 
 <img src="../img/od_igv_2.png" width="500">
-5. Click the blue button “Launch NoVNC in New Tab” when it appears
+5. Click the blue button `Launch NoVNC in New Tab` when it appears
 
-After this the IGV window will appearm, probably as a small window on a grey background.
+After this the IGV window will appear, probably as a small window on a grey background.
 Click the square icon in the top right corner to maximize the window.
 
 <img src="../img/igv_start.png" width="500">

@@ -25,7 +25,7 @@ For support with this workshop or the HPC cluster, email TTS Research Technology
 - [VPN](https://access.tufts.edu/vpn) if accessing the HPC from off campus
 
 ## Schedule
-- [Introduction](slides/intro_to_ngs_bioinformatics_into_13May20.pdf)
+- [Introduction](slides/intro_to_ngs_bioinformatics_into_18May20.pdf)
 - [Setup](lessons/01_Setup.md)
 - [Quality Control](lessons/02_Quality_Control.md)
 - [Alignment](lessons/03_Alignment.md)

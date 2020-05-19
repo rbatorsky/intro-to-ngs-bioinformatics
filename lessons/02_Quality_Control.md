@@ -262,7 +262,6 @@ Adapter trimming: Automatically detects and removes known Illumina adapters that
 To perform trimming on the data, we first load the software which is installed as an a conda environment.
 For more information on using anaconda on the HPC, see [this tutorial](https://sites.tufts.edu/biotools/files/2019/07/conda_on_hpc.pdf).
 
-### HERE
 ```
 module load anaconda/3
 source activate /cluster/tufts/bio/tools/conda_envs/trim_galore/
