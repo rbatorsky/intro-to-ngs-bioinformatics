@@ -3,8 +3,13 @@
 ## Description
 This course covers the basics of Next Generation Sequencing Bioinformatics, with the goal of 
 variant calling and interpretation.
+
 The material is designed to be a 3 hour workshop and is run on [Tufts High Performance Compute (HPC) Cluster](https://access.tufts.edu/research-cluster-account).
 For support with this workshop or the HPC cluster, email TTS Research Technology [tts-research@tufts.edu](mailto:ltts-research@tufts.edu)
+
+If you are taking this workshop on 5/19/20, please use [Piazza](https://piazza.com/tufts) for discussion.
+The class is listed in term Summer 2020, 1: Intro to NGS Bioinformatics
+
 
 ## Goals
 - Writing and running bash scripts
