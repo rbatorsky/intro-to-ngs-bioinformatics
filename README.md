@@ -40,4 +40,5 @@ The class is listed in term Summer 2020, 1: Intro to NGS Bioinformatics
 
 
 ## Acknowledgement
-Much of this workshop has been adapted from the [HBC Training In Depth NGS Analysis Course](https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course)
+Much of this workshop has been adapted from the [HBC Training In Depth NGS Analysis Course](https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course) with the help of
+Dr. Wenwen Huo at Tufts University.
