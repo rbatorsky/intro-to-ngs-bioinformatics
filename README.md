@@ -12,9 +12,9 @@ The class is listed in term Summer 2020, 1: Intro to NGS Bioinformatics
 
 
 ## Goals
-- Writing and running bash scripts
-- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK, VEP
-- Variant Calling, Annotation and Interpretation
+- Writing and running bash scripts on the HPC
+- Intro to several bioinformatics tools: BWA, Samtools, Picard, GATK, VEP, IGV
+- Variant Calling, Annotation and Interpretation using a Human Exome sample
 
 <img src="img/workflow.png" width="200">
 
