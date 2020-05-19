@@ -8,6 +8,7 @@ Approximate time: 20 minutes
 1. Open a Chrome browser and enter the URL [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
 3. On the top menu bar choose Clusters->HPC Shell Access
+
 <img src="../img/od_terminal.png" width="400">
 
 4. Type your password at the prompt (the password will be hidden for security purposes):
@@ -21,7 +22,7 @@ Approximate time: 20 minutes
 This indicates you are logged in to the login node of the cluster.
 
 6. Type `clear` to clear the screen
- 
+
 ## Set up for the analysis
 
 ### Find 500M storage space
@@ -31,7 +32,7 @@ This indicates you are logged in to the login node of the cluster.
 Result:
 ```
 Home Directory Quota
-Disk quotas for user tutln01 (uid 31394): 
+Disk quotas for user tutln01 (uid 31394):
      Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
 hpcstore03:/hpc_home/home
                   1222M   5120M   5120M            2161   4295m   4295m        
@@ -41,11 +42,11 @@ Listing quotas for all groups you are a member of
 Group: facstaff	Usage: 16819478240KB	Quota: 214748364800KB	Percent Used: 7.00%
 ```
 
-Under `blocks` you will see the amount of storage you are using, and under quota you see your quota. 
+Under `blocks` you will see the amount of storage you are using, and under quota you see your quota.
 Here, the user has used 1222M of the available 5120M and has enough space for our analysis.
- 
-2. If you do not have 500M available, you may have space in a project directory for your lab. 
-These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/username/`. 
+
+2. If you do not have 500M available, you may have space in a project directory for your lab.
+These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/username/`.
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
 ### Download the data
@@ -67,15 +68,15 @@ Or, if you are using a project directory:
 
 (Also available via:  `git clone https://gitlab.tufts.edu/rbator01/intro-to-ngs.git`)
 
-4. Take a look at the contents using the `tree` command: 
-  
+4. Take a look at the contents using the `tree` command:
+
 `tree intro-to-ngs`
 
 You'll see a list of all files
 ```
 intro-to-ngs
-├── all_commands.sh          <-- Bash script with all commands 
-├──intro_to_ngs_Dec2019.pdf  <-- Course slides 
+├── all_commands.sh          <-- Bash script with all commands
+├──intro_to_ngs_Dec2019.pdf  <-- Course slides
 ├── raw_data                 <-- Folder with paired end fastq files
 │   ├── na12878_1.fq         
 │   └── na12878_2.fq
@@ -87,12 +88,13 @@ intro-to-ngs
 
 ### Data for the class
 
-Genome In a Bottle (GIAB) was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice" 
+Genome In a Bottle (GIAB) was initiated in 2011 by the National Institute of Standards and Technology "to develop the technical infrastructure (reference standards, reference methods, and reference data) to enable translation of whole human genome sequencing to clinical practice"
 ([Zook et al 2012](https://www.nist.gov/programs-projects/genome-bottle)).  We'll be using a DNA Whole Exome Sequencing (WES) dataset released by GIAB for the purposes of benchmarking bioinformatics tools.
+
 <img src="../img/giab.png" width="400">
 
 The source DNA, known as NA12878, was taken from a single person: the daughter in a father-mother-child 'trio'.
-She is also mother to 11 children of her own, for whom sequence data is also available. ([HBC Training](https://hbctraining.github.io/In-depth-NGS-Data-Analysis-Course/sessionVI/lessons/01_alignment.html)). 
+She is also mother to 11 children of her own, for whom sequence data is also available. ([HBC Training](https://hbctraining.github.io/In-depth-NGS-Data-Analysis-Course/sessionVI/lessons/01_alignment.html)).
 Father-mother-child 'trios' are often sequenced to study genetic links between family members.
 
 As mentioned in the introduction, WES is a method to concentrate the sequenced DNA fragments in coding regions (exons) of the genome.
@@ -109,5 +111,4 @@ Sequencing: Illumina, Paired End, Exome
 
 [Next: Quality Control](02_Quality_Control.md)
 
-[Previous: Introduction](00_Introduction.md) 
-
+[Previous: Introduction](00_Introduction.md)

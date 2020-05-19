@@ -10,7 +10,7 @@ Use Genome Analysis Tool Kit (GATK) to call variants
 
 GATK requires a Sequence Dictionary for reference genomes used in variant calling.
 The sequence dictionary contains names and lengths of all chromosomes in the reference genome.
-The information in this file is transferred to the Variant Call File (VCF) when it is produced, so that there is no 
+The information in this file is transferred to the Variant Call File (VCF) when it is produced, so that there is no
 ambiguity about which reference was used to produce the file.
 
 Let's open a new script
@@ -30,7 +30,7 @@ REFERENCE=ref_data/chr10.fa \
 OUTPUT=ref_data/chr10.dict
 ```
 
-With these steps, we load the necessary modules, created a FASTA index for our reference sequence, and use Picard to 
+With these steps, we load the necessary modules, created a FASTA index for our reference sequence, and use Picard to
 create our Sequence Dictionary.
 
 Run our script:
@@ -48,7 +48,7 @@ Runtime.totalMemory()=2058354688
 
 Two new files are created in the folder `ref_data`, our FASTA index (fai) and sequence dictionary (dict):
 ```markdown
-chr10.fa.fai 
+chr10.fa.fai
 chr10.dict
 ```
 
@@ -61,28 +61,28 @@ GATK has two main goals:
 The figure below described the 4 stages of the GATK HaplotypeCaller algorithm (from [software.broadinstitute.org](https://gatkforums.broadinstitute.org/gatk/discussion/11068/haplotypecaller-in-a-nutshell)
 ).
 
-<img src="../img/gatk_hc.png" width="200">
+<img src="../img/gatk_hc.png" width="600">
 
 Paraphrasing from the GATK documentation, the four stages are as follows:
 
-1. Define active regions. The program determines which regions of the genome it needs to operate on, 
+1. Define active regions. The program determines which regions of the genome it needs to operate on,
 based on the presence of significant evidence for variation.
 
-2. Determine haplotypes by re-assembly of the active region. 
+2. Determine haplotypes by re-assembly of the active region.
 For each active region, the program builds a graph to represent all possible read sequences spanning the region.
-For example, the top first read starts in the `TATG` bubble that is common to all reads, then takes the top path to the `A` bubble, 
-continues through the `AAT`, etc. 
-The program then realigns each haplotype (path through the graph) against the reference sequence in order to identify 
+For example, the top first read starts in the `TATG` bubble that is common to all reads, then takes the top path to the `A` bubble,
+continues through the `AAT`, etc.
+The program then realigns each haplotype (path through the graph) against the reference sequence in order to identify
 potentially variant sites.
 
-3. Determine likelihoods of the haplotypes given the read data. 
+3. Determine likelihoods of the haplotypes given the read data.
 The goal of this stage is to evaluate which haplotypes have the most read support.
-For each active region, the program performs a pairwise alignment of each read against each haplotype using the PairHMM algorithm, 
+For each active region, the program performs a pairwise alignment of each read against each haplotype using the PairHMM algorithm,
 which takes into account other information about the data, such as quality scores.
-This produces a matrix of likelihoods of haplotypes given the read data. 
+This produces a matrix of likelihoods of haplotypes given the read data.
 These likelihoods are then used to calculate how much evidence there is for individual alleles at each variant site (marginalization over alleles).
 
-4. Assign sample genotypes. 
+4. Assign sample genotypes.
 The final step is to determine which sequences were most likely present in the data.
 This step uses Bayes' rule to find the most likely genotype, given the allele likelihoods calculated in the last step.
 
@@ -135,7 +135,7 @@ sh gatk.sh
 Result:
 ```markdown
 INFO  17:17:41,656 HelpFormatter - -----------
-INFO  17:17:41,660 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.7-0-gcfedb67, Compiled 2016/12/12 11:21:18  
+INFO  17:17:41,660 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.7-0-gcfedb67, Compiled 2016/12/12 11:21:18 
 …
 ```
 
@@ -153,7 +153,7 @@ cd results
 head na12878.vcf
 ```
 
-VCF, like BAM files, files contain two sections: A header section, indicated by the presence of `#` at the beginning of the line, 
+VCF, like BAM files, files contain two sections: A header section, indicated by the presence of `#` at the beginning of the line,
 followed by data lines for each variant that was called.
 ```markdown
 ##fileformat=VCFv4.2
@@ -172,7 +172,7 @@ chr10	96521422	.	A	G	60.28	.         AC=2;AF=1.00; ….  GT:AD:DP:GQ:PL  1/1:0,3
 chr10	96522365	.	T	C	1134.77	.         AC=1;AF=0.500;….  GT:AD:DP:GQ:PL  0/1:47,37:84:99:1163,0,1502
 ```
 
-The header lines explain the meaning of notation found in the body section of the VCF, as well as information about the 
+The header lines explain the meaning of notation found in the body section of the VCF, as well as information about the
 reference and software used to produce the VCF.
 The last header line lists the column titles for information, and the last column has the sample name.
 VCF can be used to represent multiple samples, and in that case, each sample would have it's own subsequent column.
@@ -196,7 +196,7 @@ INFO - Additional information
 Genotype fields (one per sample):
 FORMAT - This field specifies the format that will be used to give information in each sample column.
 VCF can represent In this case, we see `GT:AD:DP:GQ:PL`, which corresponds to the values `1/1:0,3:3:9:88,9,0`.
-GT - Genotype, encoded as allele values separated by either '/' (unphaseD) or '|' (phased - known to be on the same chromosome arm). The allele values are 0 for the reference allele 
+GT - Genotype, encoded as allele values separated by either '/' (unphaseD) or '|' (phased - known to be on the same chromosome arm). The allele values are 0 for the reference allele
 and 1 for the first allele listed.
 AD - Allele depth at this position for the same, reference first followed by first allele listed
 DP - Read depth at this position for the sample
@@ -208,7 +208,7 @@ For more on the rich VCF format, see [the VCF format specification from Samtools
 ## VCF Quality Control
 
 It's always a good idea when writing a new pipeline, to ask: How well did our variant calling perform?
-In this case, the best way to check the performance would be to compare the variants we called in this exercise matched the "known" variants for 
+In this case, the best way to check the performance would be to compare the variants we called in this exercise matched the "known" variants for
 NA12878 in the [NIST callset](https://github.com/ga4gh/benchmarking-tools/blob/master/resources/high-confidence-sets/giab.md
 ). That exercise is beyond the scope of this workshop.
 
@@ -233,4 +233,3 @@ Hover over the colored blocks on the variant track in order to see the informati
 [Next: Variant Annotation](06_Variant_Annotation.md)
 
 [Previous: Alignment Cleanup](04_Alignment_Cleanup.md)
-

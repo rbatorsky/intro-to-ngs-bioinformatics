@@ -14,15 +14,15 @@ Below is a subset of the most commonly used annotations annotations.
 - Identifiers: Gene, transcript, protein, etc.
 
 - Frequency data: Allele frequency information from multiple public databases.
-[1000 Genomes](https://www.internationalgenome.org/data/), 
-(gnomAD)[https://gnomad.broadinstitute.org/], 
+[1000 Genomes](https://www.internationalgenome.org/data/),
+(gnomAD)[https://gnomad.broadinstitute.org/],
 (ESP)[https://evs.gs.washington.edu/EVS/]
  Allele frequency information is helpful to understand whether the input variant is common or rare in different geographical populations.
 
--Pathogenicity predictions: 
+-Pathogenicity predictions:
 Computational predictions of whether a variant will affect the protein function.
-Various algorithms are available ([SIFT](https://sift.bii.a-star.edu.sg/), 
-[PolyPhen2](http://genetics.bwh.harvard.edu/pph2/), 
+Various algorithms are available ([SIFT](https://sift.bii.a-star.edu.sg/),
+[PolyPhen2](http://genetics.bwh.harvard.edu/pph2/),
 [CADD](https://cadd.gs.washington.edu/), etc)
 
 - Disease Association:
@@ -58,9 +58,9 @@ First, we'll download the VCF from the cluster to our local computer.
 ## Run VEP
 
 1. In web browser tab, navigate to to [https://useast.ensembl.org/Tools/VEP](https://useast.ensembl.org/Tools/VEP)
-Note that VEP can also be run on the command line on our HPC, resulting in a text file (txt or vcf). 
+Note that VEP can also be run on the command line on our HPC, resulting in a text file (txt or vcf).
 You are welcome to ask for instructions to run the command line VEP.
-For single VCF analysis, the web server is recommended in order to take advantage of the visualization tools. 
+For single VCF analysis, the web server is recommended in order to take advantage of the visualization tools.
 
 2. In the `Species` section choose `Human (Homo sapiens)` (should be the default)
 
@@ -74,10 +74,10 @@ For single VCF analysis, the web server is recommended in order to take advantag
 ### Viewing VEP results
 When your job is done, click `View Results`
 
-<img src="../img/vep_results_1.png" width="200">
+<img src="../img/vep_results_1.png" width="800">
 
 Our goal is to identify variants that change the coding sequence.
-We can see in the `Coding Consequences` box on the right that 20% of the variants are `missense`, which means that they 
+We can see in the `Coding Consequences` box on the right that 20% of the variants are `missense`, which means that they
 change the coding sequence of the transcript.
 
 ### Filtering VEP consequences
@@ -90,15 +90,15 @@ You should see 1 row - here are a subset of interesting columns:
 
 | Existing_variation | SIFT | PolyPhen | AF | Clinical Significance |
 |:---:|:---:|:---:|:---:|
-| rs3758581,CM983294 | tolerated(0.38) | benign(0.05) | 0.9515 | | 
+| rs3758581,CM983294 | tolerated(0.38) | benign(0.05) | 0.9515 | |
 
 Based on the annotations, one can conclude that this variant unlikely to cause disease.
 This is consistent with what we know about `NA12878` being a healthy individual.
- 
-Though the vatiant does change the amino acid from `I` to `V`, both SIFT, PolyPhen both suggest that this change does not 
+
+Though the vatiant does change the amino acid from `I` to `V`, both SIFT, PolyPhen both suggest that this change does not
 alter protein function.
 Furthermore, there is no ClinVar report associated with this variant.
-Finally, the maximum allele frequency found for this variant in the `1000 Genomes` database is `0.95`, meaning it is a 
+Finally, the maximum allele frequency found for this variant in the `1000 Genomes` database is `0.95`, meaning it is a
 very common variant and unlikely to be pathogenic.
 
 ## summary
