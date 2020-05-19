@@ -49,9 +49,9 @@ If you don't know whether you have project space, please email [tts-research@tuf
 
 `srun --pty -t 3:00:00  --mem 16G  -N 1 --cpus 4 bash`
 
-Note: 
-- if wait times are very long, you can try a different partitions by adding, e.g. `-p preempt` or `-p interactive` before `bash`.
-- if you go through this workshop in multiple steps, you will have to rerun this step each time you log in.
+Notes: 
+If wait times are very long, you can try a different partitions by adding, e.g. `-p preempt` or `-p interactive` before `bash`.
+If you go through this workshop in multiple steps, you will have to rerun this step each time you log in.
 
 - Change to your home directory
 
@@ -109,4 +109,4 @@ Sequencing: Illumina, Paired End, Exome
 
 [Next: Quality Control](02_Quality_Control.md)
 
-[Previous: Introduction](00_Introduction.md)
+[Previous: Repository Home](../README.md)
