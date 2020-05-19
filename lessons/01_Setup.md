@@ -5,11 +5,11 @@ Approximate time: 20 minutes
 - Download data
 
 ## Log into the HPC cluster's On Demand interface
-1. Open a Chrome browser and enter the URL [ondemand.cluster.tufts.edu](ondemand.cluster.tufts.edu)
+1. Open a Chrome browser and enter the URL [https://ondemand.cluster.tufts.edu](https://ondemand.cluster.tufts.edu)
 2. Log in with your Tufts Credentials
-3. On the top menu bar choose Clusters->HPC Shell Access
+3. On the top menu bar choose `Clusters->Tufts HPC Shell Access`
 
-<img src="../img/od_terminal.png" width="400">
+<img src="../img/od_terminal.png" width="500">
 
 4. Type your password at the prompt (the password will be hidden for security purposes):
 
@@ -50,11 +50,13 @@ These are located in `/cluster/tufts` with names like `/cluster/tufts/labname/us
 If you don't know whether you have project space, please email [tts-research@tufts.edu](mailto:tts-research@tufts.edu).
 
 ### Download the data
-1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cpu on 1 node) by typing:
+1. Get an interaction session on a compute node (3 hours, 16 Gb memory, 4 cpu on 1 node) on the default partition (`batch`) by typing:
 
 `srun --pty -t 3:00:00  --mem 16G  -N 1 --cpus 4 bash`
 
-Note that if you go through this workshop in multiple steps, you will have to rerun this step each time you log in.
+Note: 
+- if wait times are very long, you can try a different partitions by adding, e.g. `-p preempt` or `-p interactive` before `bash`.
+- if you go through this workshop in multiple steps, you will have to rerun this step each time you log in.
 
 2. Change to your home directory
 
@@ -66,7 +68,7 @@ Or, if you are using a project directory:
 
 3. Copy the course directory and all files in the directory (-R is for recursive):   
 
-`cp -R /cluster/tufts/bio/tools/intro-to-ngs/ .`   
+`cp -R /cluster/tufts/bio/tools/training/intro-to-ngs/ .`   
 
 (Also available via:  `git clone https://gitlab.tufts.edu/rbator01/intro-to-ngs.git`)
 
@@ -78,11 +80,10 @@ You'll see a list of all files
 ```
 intro-to-ngs
 ├── all_commands.sh          <-- Bash script with all commands
-├──intro_to_ngs_Dec2019.pdf  <-- Course slides
 ├── raw_data                 <-- Folder with paired end fastq files
 │   ├── na12878_1.fq         
 │   └── na12878_2.fq
-├── README.md                <-- Instructions
+├── README.md                <-- Contents description
 └── ref_data                 <-- Folder with reference sequence
     └── chr10.fa
 2 directories, 5 files

@@ -74,7 +74,7 @@ For single VCF analysis, the web server is recommended in order to take advantag
 ### Viewing VEP results
 When your job is done, click `View Results`
 
-<img src="../img/vep_results_1.png" width="800">
+<img src="../img/vep_results_1.png" width=900">
 
 Our goal is to identify variants that change the coding sequence.
 We can see in the `Coding Consequences` box on the right that 20% of the variants are `missense`, which means that they
